@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>佳琦 | 個人數位作品集 - 數位學習與多媒體教材設計</title>
+  <!-- Google 字體 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-sky-100 selection:text-sky-900">
+
+  <!-- 導覽列 -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold tracking-tight text-slate-900 hover:text-sky-600 transition">
+        佳琦<span class="text-sky-600">.</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+        <a href="#about" class="hover:text-sky-600 transition">關於我</a>
+        <a href="#projects" class="hover:text-sky-600 transition">精選專案</a>
+        <a href="#skills" class="hover:text-sky-600 transition">專業技能</a>
+        <a href="#contact" class="px-4 py-2 rounded-full bg-slate-900 text-white hover:bg-sky-600 transition">聯絡我</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero 形象區塊 -->
+  <section id="about" class="pt-20 pb-16 md:pt-28 md:pb-24 max-w-6xl mx-auto px-6">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-semibold tracking-wide mb-6 border border-sky-200">
+        國立臺北護理健康大學 ‧ 醫護教育暨數位學習系
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+        融合資訊邏輯與創意體驗，<br class="hidden sm:inline" />
+        打造直覺生動的<span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600">數位多媒體教材</span>。
+      </h1>
+      <p class="text-lg text-slate-600 leading-relaxed mb-8">
+        你好！我是江佳琦，是來自國立臺北護理健康大學醫護教育暨數位學習系的學生。專注於數位多媒體教材製作與資訊互動開發。善於將專業衛教知識轉化為寓教於樂的遊戲、互動工具與沉浸式學習體驗，期望能為數位教育與使用者互動創造更多價值。
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#projects" class="px-6 py-3 rounded-lg bg-sky-600 text-white font-medium hover:bg-sky-700 shadow-sm hover:shadow transition">
+          探索專案作品
+        </a>
+        <a href="#contact" class="px-6 py-3 rounded-lg border border-slate-300 bg-white text-slate-700 font-medium hover:bg-slate-50 transition">
+          即刻聯絡
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 精選作品區塊 -->
+  <section id="projects" class="py-16 md:py-24 bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <h2 class="text-xs uppercase tracking-widest text-sky-600 font-bold mb-2">Portfolio</h2>
+          <p class="text-3xl font-bold text-slate-900 tracking-tight">精選專案作品</p>
+        </div>
+        <p class="text-sm text-slate-500 mt-2 md:mt-0">涵蓋 Web 應用、互動遊戲與沉浸式體驗教材</p>
+      </div>
+
+      <!-- 作品網格 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- 專案 1 -->
+        <div class="group rounded-2xl border border-slate-200 overflow-hidden bg-slate-50/50 hover:shadow-lg transition-all duration-300 flex flex-col">
+          <!-- 圖片預留位 -->
+          <div class="w-full h-56 bg-slate-200 relative overflow-hidden flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+            <!-- 請在此替換圖片網址，例如: <img src="images/lunch.jpg" class="w-full h-full object-cover"> -->
+            <span class="text-sm font-medium"><img src="午餐吃什麼.png" alt="專案截圖" class="w-full h-full object-cover"></span>
+          </div>
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-sky-100 text-sky-800">Web 互動工具</span>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">健康衛教</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">欸今天午餐吃什麼？</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                整合「校園周邊店家抽籤輪盤」、「基礎代謝率 (BMR) 自動計算機」與「健康飲食衛教小遊戲」。透過生活化情境引導使用者關心每日營養攝取與卡路里平衡。
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-200/80 text-xs text-slate-500 flex justify-between items-center">
+              <span>關鍵字：JavaScript / UI 設計 / 衛教應用</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 專案 2 -->
+        <div class="group rounded-2xl border border-slate-200 overflow-hidden bg-slate-50/50 hover:shadow-lg transition-all duration-300 flex flex-col">
+          <div class="w-full h-56 bg-slate-200 relative overflow-hidden flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+            <!-- 請在此替換圖片網址 -->
+            <span class="text-sm font-medium"><img src="健康電子雞.png" alt="專案截圖" class="w-full h-full object-cover"></span>
+          </div>
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">養成遊戲</span>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-sky-100 text-sky-800">遊戲化學習 (Gamification)</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">健康電子雞</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                以復古電子寵物養成機制為靈感，結合生活衛教知識。玩家的健康選擇直接影響電子雞的生命狀態與心情指數，讓衛教學習變得有趣且具黏著度。
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-200/80 text-xs text-slate-500 flex justify-between items-center">
+              <span>關鍵字：互動邏輯 / 像素美學 / 行為改變</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 專案 3 -->
+        <div class="group rounded-2xl border border-slate-200 overflow-hidden bg-slate-50/50 hover:shadow-lg transition-all duration-300 flex flex-col">
+          <div class="w-full h-56 bg-slate-200 relative overflow-hidden flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+            <!-- 請在此替換圖片網址 -->
+            <span class="text-sm font-medium"><img src="文化探索.png" alt="專案截圖" class="w-full h-full object-cover"></span>
+          </div>
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-100 text-purple-800">VR 虛擬實境</span>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">沉浸式教育</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">環遊世界 x 文化探索</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                專為歷史與地理文化設計的 VR 沉浸式互動遊戲。引導學習者走入虛擬場景親身體驗各國風貌，打破傳統課本教材的空間限制。
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-200/80 text-xs text-slate-500 flex justify-between items-center">
+              <span>關鍵字：VR 體驗 / 空間設計 / 數位教材</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 專案 4 -->
+        <div class="group rounded-2xl border border-slate-200 overflow-hidden bg-slate-50/50 hover:shadow-lg transition-all duration-300 flex flex-col">
+          <div class="w-full h-56 bg-slate-200 relative overflow-hidden flex items-center justify-center text-slate-400 group-hover:scale-[1.02] transition-transform duration-300">
+            <!-- 請在此替換圖片網址 -->
+            <span class="text-sm font-medium"><img src="洗手小英雄.png" alt="專案截圖" class="w-full h-full object-cover"></span>
+          </div>
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800">幼兒衛教</span>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-teal-100 text-teal-800">多媒體繪本/動畫</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">我是洗手小英雄</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                針對幼稚園與低年級學童量身訂做的趣味洗手衛教教材。運用生動的角色動畫與口訣引導，讓學童在遊戲式氛圍中熟練掌握正確洗手步驟。
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-200/80 text-xs text-slate-500 flex justify-between items-center">
+              <span>關鍵字：童趣視覺 / 動畫多媒體 / 幼兒衛教教學法</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 專業核心技能 -->
+  <section id="skills" class="py-16 md:py-20 max-w-6xl mx-auto px-6">
+    <div class="max-w-2xl mb-12">
+      <h2 class="text-xs uppercase tracking-widest text-sky-600 font-bold mb-2">Expertise</h2>
+      <p class="text-3xl font-bold text-slate-900 tracking-tight">核心能力與專長</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-xl bg-white border border-slate-200">
+        <h4 class="font-bold text-slate-900 text-lg mb-2">數位多媒體教材設計</h4>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          具備教學設計概念，能將複雜的衛教、歷史等學科知識簡化為故事腳本、動畫與遊戲化關卡。
+        </p>
+      </div>
+      <div class="p-6 rounded-xl bg-white border border-slate-200">
+        <h4 class="font-bold text-slate-900 text-lg mb-2">資訊與前端互動實踐</h4>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          熟悉網頁互動邏輯開發、基礎運算（如數值計算機、抽籤邏輯）與介面排版，讓教材具備即時互動性。
+        </p>
+      </div>
+      <div class="p-6 rounded-xl bg-white border border-slate-200">
+        <h4 class="font-bold text-slate-900 text-lg mb-2">跨領域衛教轉譯</h4>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          兼具北護醫護背景與數位教育敏銳度，能精準洞察使用者需求，提供具備實質教育意義的數位體驗。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯絡表單 (透過 Formspree 直接轉寄到信箱) -->
+  <section id="contact" class="py-16 md:py-24 bg-slate-900 text-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-xs uppercase tracking-widest text-sky-400 font-bold mb-2">Get in touch</h2>
+        <p class="text-3xl font-bold tracking-tight">歡迎與我聯繫合作</p>
+        <p class="text-slate-400 text-sm mt-3">
+          如果您對我的專案有興趣，或有任何實習/工作機會，歡迎留下訊息！<br />
+          直接聯絡信箱：<a href="mailto:tina101793@gmail.com" class="text-sky-400 underline underline-offset-4">tina101793@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- 寄信表單 -->
+      <!-- 步驟提示：至 formspree.io 免費申請，將下方的 YOUR_FORM_ID 替換為你的 Form ID 即可無後端轉發信件 -->
+      <form action="https://formspree.io/f/xrpbrgow" method="POST" class="space-y-5 bg-slate-800/80 p-8 rounded-2xl border border-slate-700">
+        <div>
+          <label for="email" class="block text-sm font-medium text-slate-300 mb-1.5">您的 Email 信箱</label>
+          <input 
+            type="email" 
+            name="email" 
+            id="email" 
+            required 
+            placeholder="example@domain.com"
+            class="w-full px-4 py-3 rounded-lg bg-slate-900/90 border border-slate-600 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+          />
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium text-slate-300 mb-1.5">想對我說的話</label>
+          <textarea 
+            name="message" 
+            id="message" 
+            rows="4" 
+            required 
+            placeholder="請在此輸入您的留言內容..."
+            class="w-full px-4 py-3 rounded-lg bg-slate-900/90 border border-slate-600 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+          ></textarea>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full py-3.5 px-6 rounded-lg bg-sky-500 hover:bg-sky-400 font-semibold text-slate-950 transition duration-200 shadow-lg shadow-sky-500/20"
+        >
+          發送訊息
+        </button>
+      </form>
+
+      <footer class="mt-16 text-center text-xs text-slate-500">
+        <p>© 2026 chiachi. All rights reserved. Designed for Portfolio & Career Opportunities.</p>
+      </footer>
+    </div>
+  </section>
+
+</body>
+</html>
