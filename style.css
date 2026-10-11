@@ -1,13 +1,22 @@
-/* 全域與基礎設定 */
+/* 全域與淺藍色系變數（無大面積亮白，以粉藍與天空藍為底） */
 :root {
   --font-base: "Plus Jakarta Sans", "Noto Sans TC", sans-serif;
-  --color-bg: #f8fafc;
-  --color-card-bg: #ffffff;
-  --color-text-main: #0f172a;
-  --color-text-muted: #64748b;
-  --color-brand: #0284c7;
-  --color-brand-hover: #0369a1;
-  --color-border: #e2e8f0;
+  
+  /* 淺藍調色盤 */
+  --color-bg: #e6f2fb;          /* 最底層清爽粉藍 */
+  --color-banner-bg: #d4eaf7;   /* 頁首柔和淺藍 */
+  --color-card-bg: #f2f8fc;     /* 卡片與表單背景（淡冰藍） */
+  --color-card-border: #b9dcf5; /* 卡片淡藍邊框 */
+  
+  /* 強調色與互動色彩 */
+  --color-accent: #0284c7;      /* 鮮明蔚藍（按鈕、重點高亮） */
+  --color-accent-hover: #0369a1;/* 按鈕懸停深藍 */
+  --color-tag-bg: #d0e8f9;      /* 標籤淡藍底 */
+  --color-placeholder: #dcebf5; /* 圖片預留位淺藍底 */
+
+  /* 文字色彩（深海軍藍，易讀且不刺眼） */
+  --color-text-main: #0c2340;   /* 主要標題與內文 */
+  --color-text-muted: #335372;  /* 次要說明文字 */
 }
 
 * {
@@ -24,6 +33,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* 頁首橫幅（歡迎來到佳琦的個人網站） */
+.site-banner {
+  background: linear-gradient(180deg, #cde5f7 0%, var(--color-banner-bg) 100%);
+  border-bottom: 1px solid var(--color-card-border);
+  padding: 3.2rem 1.5rem;
+  text-align: center;
+}
+
+.site-banner-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  letter-spacing: 0.02em;
+}
+
 .page-container {
   max-width: 1040px;
   margin: 0 auto;
@@ -33,16 +57,16 @@ body {
 /* 標頭樣式 */
 .section-header {
   margin-bottom: 2.5rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-card-border);
   padding-bottom: 1.25rem;
 }
 
 .section-tag {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-brand);
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
   display: inline-block;
   margin-bottom: 0.35rem;
 }
@@ -69,28 +93,30 @@ body {
 
 .project-card {
   background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
+  border: 1px solid var(--color-card-border);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(12, 35, 64, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-accent);
+  box-shadow: 0 12px 24px rgba(2, 132, 199, 0.15);
 }
 
 .project-thumb {
   width: 100%;
   height: 220px;
-  background-color: #e2e8f0;
+  background-color: var(--color-placeholder);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  border-bottom: 1px solid var(--color-card-border);
 }
 
 .project-thumb img {
@@ -102,8 +128,8 @@ body {
 
 .project-thumb-placeholder {
   font-size: 0.85rem;
-  color: #94a3b8;
-  font-weight: 500;
+  color: #5a7b9c;
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,16 +153,18 @@ body {
 
 .tag {
   font-size: 0.75rem;
-  padding: 0.25rem 0.6rem;
+  padding: 0.25rem 0.65rem;
   border-radius: 999px;
-  background-color: #f1f5f9;
-  color: #475569;
-  font-weight: 600;
+  background-color: var(--color-tag-bg);
+  color: var(--color-text-muted);
+  font-weight: 700;
+  border: 1px solid #bce0f8;
 }
 
 .tag.highlight {
-  background-color: #e0f2fe;
+  background-color: #bae6fd;
   color: #0369a1;
+  border-color: #7dd3fc;
 }
 
 .project-title {
@@ -147,28 +175,29 @@ body {
 }
 
 .project-detail {
-  font-size: 0.9rem;
-  color: #475569;
+  font-size: 0.92rem;
+  color: #244160;
   line-height: 1.6;
   margin-bottom: 1.25rem;
 }
 
 .project-meta {
   padding-top: 0.85rem;
-  border-top: 1px dashed var(--color-border);
+  border-top: 1px dashed var(--color-card-border);
   font-size: 0.8rem;
+  font-weight: 500;
   color: var(--color-text-muted);
 }
 
-/* 聯絡我表單區塊 */
+/* 聯絡我容器 */
 .contact-wrapper {
   max-width: 680px;
   margin: 0 auto;
   background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
+  border: 1px solid var(--color-card-border);
+  border-radius: 18px;
   padding: 2.25rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 16px rgba(12, 35, 64, 0.08);
 }
 
 .contact-direct {
@@ -179,9 +208,9 @@ body {
 }
 
 .contact-direct a {
-  color: var(--color-brand);
+  color: var(--color-accent);
   text-decoration: underline;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .form-group {
@@ -191,7 +220,7 @@ body {
 .form-label {
   display: block;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.4rem;
   color: var(--color-text-main);
 }
@@ -200,20 +229,25 @@ body {
 .form-textarea {
   width: 100%;
   padding: 0.75rem 0.9rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-card-border);
   border-radius: 8px;
   font-size: 0.95rem;
   font-family: inherit;
   color: var(--color-text-main);
-  background-color: #fdfdfd;
+  background-color: #ffffff;
   transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #7d9cb8;
 }
 
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: var(--color-brand);
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
 }
 
 .submit-btn {
@@ -221,16 +255,17 @@ body {
   padding: 0.85rem;
   border: none;
   border-radius: 8px;
-  background-color: var(--color-brand);
+  background-color: var(--color-accent);
   color: #ffffff;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
 }
 
 .submit-btn:hover {
-  background-color: var(--color-brand-hover);
+  background-color: var(--color-accent-hover);
 }
 
 .submit-btn:active {
@@ -244,16 +279,19 @@ body {
   border-radius: 6px;
   display: none;
   text-align: center;
+  font-weight: 600;
 }
 
 .status-message.success {
   display: block;
-  background-color: #dcfce7;
-  color: #166534;
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
 }
 
 .status-message.error {
   display: block;
-  background-color: #fee2e2;
-  color: #991b1b;
+  background-color: #ffe4e6;
+  color: #9f1239;
+  border: 1px solid #fecdd3;
 }
