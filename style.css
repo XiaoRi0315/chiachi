@@ -2,19 +2,19 @@
 :root {
   --font-base: "Plus Jakarta Sans", "Noto Sans TC", sans-serif;
   
-  /* 淺藍調色盤 */
+  /* 淺藍調色盤（完全未動） */
   --color-bg: #e6f2fb;          /* 最底層清爽粉藍 */
   --color-banner-bg: #d4eaf7;   /* 頁首柔和淺藍 */
   --color-card-bg: #f2f8fc;     /* 卡片與表單背景（淡冰藍） */
   --color-card-border: #b9dcf5; /* 卡片淡藍邊框 */
   
-  /* 強調色與互動色彩 */
+  /* 強調色與互動色彩（完全未動） */
   --color-accent: #0284c7;      /* 鮮明蔚藍（按鈕、重點高亮） */
   --color-accent-hover: #0369a1;/* 按鈕懸停深藍 */
   --color-tag-bg: #d0e8f9;      /* 標籤淡藍底 */
   --color-placeholder: #dcebf5; /* 圖片預留位淺藍底 */
 
-  /* 文字色彩（深海軍藍，易讀且不刺眼） */
+  /* 文字色彩（完全未動） */
   --color-text-main: #0c2340;   /* 主要標題與內文 */
   --color-text-muted: #335372;  /* 次要說明文字 */
 }
@@ -31,38 +31,48 @@ body {
   color: var(--color-text-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  min-height: 100vh;
 }
 
-/* 頁首橫幅（歡迎來到佳琦的個人網站） */
+/* ========================================================
+   [滿版排版] 頁首橫幅（歡迎來到佳琦的個人網站）
+   ======================================================== */
 .site-banner {
+  width: 100%;
   background: linear-gradient(180deg, #cde5f7 0%, var(--color-banner-bg) 100%);
   border-bottom: 1px solid var(--color-card-border);
-  padding: 3.2rem 1.5rem;
+  padding: 4rem 4%;
   text-align: center;
 }
 
 .site-banner-title {
-  font-size: 2rem;
+  font-size: clamp(2rem, 3.2vw, 3rem);
   font-weight: 800;
   color: var(--color-text-main);
   letter-spacing: 0.02em;
 }
 
+/* ========================================================
+   [滿版排版] 首頁主內容容器（解除 1040px 限制，電腦螢幕水平展開）
+   ======================================================== */
 .page-container {
-  max-width: 1040px;
+  width: 94%;
+  max-width: 1680px; /* 大螢幕滿版安全寬度 */
   margin: 0 auto;
-  padding: 2.5rem 1.25rem 4rem;
+  padding: 3rem 0 5rem;
 }
 
 /* 標頭樣式 */
 .section-header {
-  margin-bottom: 2.5rem;
+  width: 100%;
+  margin-bottom: 3rem;
   border-bottom: 1px solid var(--color-card-border);
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.5rem;
 }
 
 .section-tag {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -72,23 +82,34 @@ body {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
   font-weight: 800;
   color: var(--color-text-main);
   letter-spacing: -0.02em;
 }
 
 .section-desc {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--color-text-muted);
-  margin-top: 0.25rem;
+  margin-top: 0.4rem;
 }
 
-/* 作品集卡片網格 */
+/* ========================================================
+   [滿版排版] 作品集卡片網格（電腦螢幕 4 欄或 2 欄寬版舒展）
+   ======================================================== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.75rem;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* 大螢幕時 4 個卡片橫向排列開來，不再窄縮在中間 */
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
+  }
 }
 
 .project-card {
@@ -100,17 +121,18 @@ body {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   border-color: var(--color-accent);
-  box-shadow: 0 12px 24px rgba(2, 132, 199, 0.15);
+  box-shadow: 0 14px 28px rgba(2, 132, 199, 0.18);
 }
 
 .project-thumb {
   width: 100%;
-  height: 220px;
+  height: 240px;
   background-color: var(--color-placeholder);
   display: flex;
   align-items: center;
@@ -127,7 +149,7 @@ body {
 }
 
 .project-thumb-placeholder {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #5a7b9c;
   font-weight: 600;
   display: flex;
@@ -137,7 +159,7 @@ body {
 }
 
 .project-body {
-  padding: 1.5rem;
+  padding: 1.75rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -147,8 +169,8 @@ body {
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.75rem;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
 }
 
 .tag {
@@ -168,43 +190,46 @@ body {
 }
 
 .project-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
   color: var(--color-text-main);
 }
 
 .project-detail {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: #244160;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .project-meta {
-  padding-top: 0.85rem;
+  padding-top: 1rem;
   border-top: 1px dashed var(--color-card-border);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--color-text-muted);
 }
 
-/* 聯絡我容器 */
+/* ========================================================
+   [滿版排版] 聯絡我容器（電腦版不再局限 680px）
+   ======================================================== */
 .contact-wrapper {
-  max-width: 680px;
+  width: 100%;
+  max-width: 920px;
   margin: 0 auto;
   background: var(--color-card-bg);
   border: 1px solid var(--color-card-border);
   border-radius: 18px;
-  padding: 2.25rem;
+  padding: 3rem 4%;
   box-shadow: 0 4px 16px rgba(12, 35, 64, 0.08);
 }
 
 .contact-direct {
-  margin-bottom: 1.75rem;
-  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
   color: var(--color-text-muted);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .contact-direct a {
@@ -214,24 +239,24 @@ body {
 }
 
 .form-group {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-label {
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   color: var(--color-text-main);
 }
 
 .form-input,
 .form-textarea {
   width: 100%;
-  padding: 0.75rem 0.9rem;
+  padding: 0.9rem 1rem;
   border: 1px solid var(--color-card-border);
-  border-radius: 8px;
-  font-size: 0.95rem;
+  border-radius: 10px;
+  font-size: 1rem;
   font-family: inherit;
   color: var(--color-text-main);
   background-color: #ffffff;
@@ -247,17 +272,17 @@ body {
 .form-textarea:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.2);
 }
 
 .submit-btn {
   width: 100%;
-  padding: 0.85rem;
+  padding: 1rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: var(--color-accent);
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.1s;
@@ -273,10 +298,10 @@ body {
 }
 
 .status-message {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  padding: 0.75rem;
-  border-radius: 6px;
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  padding: 0.85rem;
+  border-radius: 8px;
   display: none;
   text-align: center;
   font-weight: 600;
@@ -297,10 +322,8 @@ body {
 }
 
 /* ========================================================
-   [新增樣式] 詳細頁面、影片容器與圖文擴充區塊 (不修改原樣式)
+   [滿版排版] 詳細頁面與影片容器
    ======================================================== */
-
-/* 讓作品集卡片支援整張點擊連結 */
 .project-card-link {
   text-decoration: none;
   color: inherit;
@@ -312,14 +335,13 @@ body {
 .card-readmore {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  font-size: 0.85rem;
+  gap: 0.35rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: var(--color-brand);
+  color: var(--color-accent);
   margin-top: 0.75rem;
 }
 
-/* 返回按鈕 */
 .back-nav {
   margin-bottom: 2rem;
 }
@@ -328,50 +350,52 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--color-brand);
+  color: var(--color-accent);
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   background-color: var(--color-card-bg);
   border: 1.5px solid var(--color-card-border);
-  border-radius: 8px;
+  border-radius: 10px;
   transition: all 0.2s ease;
 }
 
 .back-link:hover {
   background-color: #bae6fd;
-  color: var(--color-brand-hover);
-  border-color: var(--color-brand);
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent);
 }
 
-/* 詳細頁主容器 */
+/* 詳細頁主容器：解除 960px 限制，向兩側大器延伸 */
 .detail-container {
-  max-width: 960px;
+  width: 94%;
+  max-width: 1560px;
   margin: 0 auto;
-  padding: 2rem 1.25rem 4rem;
+  padding: 2.5rem 0 5rem;
 }
 
 .detail-header-card {
+  width: 100%;
   background: var(--color-card-bg);
   border: 1.5px solid var(--color-card-border);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2.5rem;
+  border-radius: 18px;
+  padding: 2.5rem 3%;
+  margin-bottom: 3rem;
   box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
 }
 
-/* 影片播放容器 (16:9 自適應) */
+/* 影片滿版容器 (16:9 自適應大畫面) */
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 ratio */
+  padding-bottom: 56.25%; /* 16:9 */
   height: 0;
-  border-radius: 14px;
+  border-radius: 18px;
   overflow: hidden;
   border: 1.5px solid var(--color-card-border);
   background-color: #000;
-  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.12);
+  box-shadow: 0 6px 24px rgba(2, 132, 199, 0.12);
 }
 
 .video-wrapper iframe,
@@ -385,50 +409,70 @@ body {
 }
 
 /* ========================================================
-   [放大版] 詳細頁圖文展示區塊 (大截圖 + 寬版排版)
+   [滿版大圖文排版] 詳細頁圖文展示區塊
+   文字在上方，下方為滿版高解析大截圖展示窗
    ======================================================== */
-
-/* 改為單欄置中大卡片陳列，讓截圖完整呈現 */
 .detail-gallery-grid {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3.5rem;
+  width: 100%;
 }
 
 .detail-gallery-item {
+  width: 100%;
   background: var(--color-card-bg);
   border: 1.5px solid var(--color-card-border);
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.08);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
   display: flex;
-  flex-direction: column-reverse; /* 核心設定：讓文字自動翻轉至圖片上方 */
+  flex-direction: column-reverse; /* 文字在上方、圖片在下方 */
 }
 
-/* 大幅提高圖片容器尺寸，自適應螢幕 */
+.detail-gallery-content {
+  padding: 2rem 3%;
+  background: var(--color-card-bg);
+  border-bottom: 1.5px solid var(--color-card-border);
+}
+
+.detail-gallery-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: 0.6rem;
+}
+
+.detail-gallery-desc {
+  font-size: 1.05rem;
+  color: #244160;
+  line-height: 1.7;
+}
+
+/* 電腦版大截圖展示高度提升至 65vh (上限 680px) 達到真正的寬螢幕滿版體驗 */
 .detail-gallery-thumb {
   width: 100%;
-  height: 480px; /* 原為 200px，大幅加大 */
+  height: 65vh;
+  min-height: 480px;
+  max-height: 680px;
   background-color: var(--color-placeholder);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-bottom: 1.5px solid var(--color-card-border);
 }
 
-/* 圖片自適應：若希望看清全部介面不被裁切，使用 contain；若希望填滿可改 cover */
 .detail-gallery-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* 完整保留整張介面截圖，不被裁切 */
+  object-fit: contain; /* 保留完整介面不裁切 */
   background-color: #f8fafc;
   display: block;
 }
 
 .detail-gallery-thumb-placeholder {
-  font-size: 1.1rem;
-  color: var(--color-brand);
+  font-size: 1.2rem;
+  color: var(--color-accent);
   font-weight: 700;
   display: flex;
   flex-direction: column;
@@ -436,28 +480,16 @@ body {
   gap: 0.5rem;
 }
 
-.detail-gallery-content {
-  padding: 1.75rem 2rem;
-  background: var(--color-card-bg);
-}
-
-.detail-gallery-title {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--color-text-main);
-  margin-bottom: 0.6rem;
-}
-
-.detail-gallery-desc {
-  font-size: 1rem;
-  color: #1e3a5f;
-  line-height: 1.7;
-}
-
-/* 手機版適應縮放 */
-@media (max-width: 640px) {
+/* 行動裝置縮放適應 */
+@media (max-width: 768px) {
+  .page-container,
+  .detail-container {
+    width: 92%;
+    padding: 1.5rem 0 3rem;
+  }
   .detail-gallery-thumb {
-    height: 280px;
+    height: 320px;
+    min-height: auto;
   }
   .detail-gallery-content {
     padding: 1.25rem;
