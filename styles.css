@@ -519,7 +519,7 @@
     position: relative;
     padding-top: clamp(20px, 3vw, 36px);
     padding-bottom: 50px;
-    background: linear-gradient(135deg, var(--color-1) 0%, #5d75eb 100%);
+    background: linear-gradient(135deg, var(--color-1) 0%, #7189ff 100%);
     color: #fff;
     overflow: hidden;
   }
