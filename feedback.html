@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>回饋表單 ─ 佳琦的個人網站</title>
+  <meta name="description" content="歡迎留下您對網站或作品的想法與建議，任何回饋都是我持續創作與優化教材的最佳動力！">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Rethink+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="m-text">
+
+  <main id="main">
+    <!-- 簡約樣式橫幅 -->
+    <section class="page-banner">
+      <div class="wrap page-banner__wrap">
+        <div class="page-banner__breadcrumb">
+          <a href="index.html">首頁</a> <span>/</span> <span>交流與回饋</span>
+        </div>
+        <h1 class="page-banner__title m-text-2">交流與回饋表單</h1>
+        <p class="page-banner__desc m-text-5" style="white-space: nowrap; max-width: none;">
+          歡迎留下您對網站或各專案作品的想法與建議，您的寶貴意見是我持續優化教材的最大動力！
+        </p>
+      </div>
+    </section>
+
+    <!-- 表單與基本資訊區塊 -->
+    <section class="feedback-section">
+      <div class="wrap grid feedback-grid">
+        <!-- 填寫表單 -->
+        <div class="feedback-form-box">
+          <h2 class="m-text-6" style="color: var(--color-1);">留下您的心得或建議</h2>
+          <form id="feedback-form" aria-label="回饋表單">
+            <div class="form-group">
+              <label for="fb-name">您的稱呼 <span style="color: #ef4444;">*</span></label>
+              <input id="fb-name" class="m-field" type="text" placeholder="例如：王同學 / 訪客老師" required>
+            </div>
+            <div class="form-group" style="margin-top: 16px;">
+              <label for="fb-email">聯絡 Email <span style="color: #ef4444;">*</span></label>
+              <input id="fb-email" class="m-field" type="email" placeholder="example@domain.com" required>
+            </div>
+            <div class="form-group" style="margin-top: 16px;">
+              <label for="fb-project">主要關注的作品或主題</label>
+              <select id="fb-project" class="m-field">
+                <option value="欸今天午餐吃什麼？">欸今天午餐吃什麼？（選餐輪盤 / BMR）</option>
+                <option value="健康電子雞">健康電子雞（像素養成遊戲）</option>
+                <option value="環遊世界 x 文化探索">環遊世界 x 文化探索（ThingLink VR 360）</option>
+                <option value="我是洗手小英雄">我是洗手小英雄（幼兒衛教互動教材）</option>
+                <option value="網站介面與整體建議">網站介面與整體風格建議</option>
+                <option value="其他合作交流">其他合作交流</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-top: 16px;">
+              <label for="fb-msg">您的回饋內容 <span style="color: #ef4444;">*</span></label>
+              <textarea id="fb-msg" class="m-field" rows="5" placeholder="請分享您的想法、使用體驗或改進建議..." required></textarea>
+            </div>
+            <div style="margin-top: 24px;">
+              <button class="m-btn" type="submit"><span class="m-btn__label">確認送出回饋</span></button>
+            </div>
+          </form>
+        </div>
+
+        <!-- 基本資訊側欄 -->
+        <aside class="feedback-info-box m-surface" aria-labelledby="feedback-info-title">
+          <h2 id="feedback-info-title" class="m-text-6" style="color: var(--color-2);">網站基本資訊</h2>
+          <p style="font-size: 14px; color: #64748b; margin-top: 6px;">
+            本作品集致力於展示遊戲化學習教材製作與科技應用成果。
+          </p>
+          <dl class="feedback-info-list">
+            <div><dt>設計開發</dt><dd>江佳琦</dd></div>
+            <div><dt>就讀學校</dt><dd>國立臺北護理健康大學</dd></div>
+            <div><dt>所屬學系</dt><dd>醫護教育暨數位學習系</dd></div>
+            <div><dt>核心領域</dt><dd>遊戲化學習 · 衛教教材</dd></div>
+            <div><dt>原始站點</dt><dd>Google Sites 平台</dd></div>
+          </dl>
+          <div style="margin-top: 24px; padding: 16px; background: #f5f8ff; border-radius: 12px; font-size: 14px; color: #4b557a; line-height: 1.6;">
+            💬 <strong>留言說明：</strong><br>
+            您的回饋訊息將作為專案反思與迭代精進的依據，非常感謝您撥冗留下寶貴意見！
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+  <div class="wrap" style="text-align: center;">
+    <p>© 2026 江佳琦 · 國立臺北護理健康大學 醫護教育暨數位學習系</p>
+  </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
