@@ -518,17 +518,13 @@
   .page-banner {
     position: relative;
     padding-top: clamp(20px, 3vw, 36px);
-    padding-bottom: 50px;
-    background: linear-gradient(135deg, var(--color-1) 0%, #5d75eb 100%);
+    padding-bottom: 32px;
+    background: var(--color-1); /* 改為與首頁相同的純色 #7189ff */
     color: #fff;
     overflow: hidden;
   }
   .page-banner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 85% 30%, rgba(193, 206, 254, 0.25), transparent 45%);
-    pointer-events: none;
+    display: none; /* 關閉光暈疊加，確保色彩 100% 一致 */
   }
   .page-banner__wrap {
     position: relative;
