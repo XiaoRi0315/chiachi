@@ -517,7 +517,7 @@
   /* 簡約版次頁面橫幅 (Simple Page Banner) */
   .page-banner {
     position: relative;
-    padding-top: 110px;
+    padding-top: clamp(20px, 3vw, 36px);
     padding-bottom: 50px;
     background: linear-gradient(135deg, var(--color-1) 0%, #5d75eb 100%);
     color: #fff;
@@ -564,7 +564,7 @@
   /* 首頁專屬：橫幅與「關於我」合併樣式 */
   .home-hero-about {
     position: relative;
-    padding-top: 110px;
+    padding-top: clamp(24px, 3.5vw, 40px);
     padding-bottom: 70px;
     background: var(--color-1);
     color: #fff;
