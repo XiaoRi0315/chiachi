@@ -97,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
   // 程式方塊輪播控制邏輯 (Block Carousel)
   document.querySelectorAll('.block-carousel').forEach((carousel) => {
     const slides = carousel.querySelectorAll('.block-carousel__slide');
@@ -128,4 +127,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 獎狀與證照圖片點擊放大 (Lightbox)
+  const lightbox = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  if (lightbox && lightboxImg) {
+    document.querySelectorAll('.cert-card__media').forEach((cardMedia) => {
+      cardMedia.addEventListener('click', () => {
+        const img = cardMedia.querySelector('.cert-card__img');
+        if (img) {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || '';
+          if (lightboxCaption) {
+            lightboxCaption.textContent = img.alt || '';
+          }
+          lightbox.classList.add('is-active');
+          lightbox.setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('is-active');
+      lightbox.setAttribute('aria-hidden', 'true');
+    };
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeLightbox);
+    }
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-active')) {
+        closeLightbox();
+      }
+    });
+  }
 });

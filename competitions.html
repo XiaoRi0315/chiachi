@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>競賽參與 ─ 佳琦的個人網站</title>
+  <meta name="description" content="江佳琦的競賽獲獎與專案成果：TAECT教學媒體競賽、彰化青年提案挑戰賽、全國護理健康程式素養APP創意競賽等獲獎榮譽。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Rethink+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="m-text">
+
+  <main id="main">
+    <!-- 簡約樣式橫幅 -->
+    <section class="page-banner">
+      <div class="wrap page-banner__wrap">
+        <div class="page-banner__breadcrumb">
+          <span>首頁</span> <span>/</span> <span>競賽參與</span>
+        </div>
+        <h1 class="page-banner__title m-text-2">競賽參與</h1>
+        <p class="page-banner__desc m-text-5">
+          匯聚遊戲化學習、數位衛教教材與智慧科技應用之競賽角逐與獲獎歷程。
+        </p>
+      </div>
+    </section>
+
+    <!-- 競賽參與主內容 -->
+    <section class="skills-section">
+      <div class="wrap">
+
+        <div class="cert-category">
+          <div class="cert-category__header">
+            <span class="cert-category__badge">榮譽肯定</span>
+            <h2 class="cert-category__title">專案競賽獎項</h2>
+          </div>
+          <div class="cert-grid">
+
+            <!-- 獎項 1：環遊世界 x 文化探索 -->
+            <article class="cert-card">
+              <div class="cert-card__media" title="點擊放大檢視獎狀">
+                <img class="cert-card__img" src="images/award-taect.png" alt="2026 TAECT 教學媒體競賽 ─ 入圍證書"> 
+              </div>
+              <div class="cert-card__body">
+                <span class="cert-card__tag">2026 TAECT教學媒體競賽</span>
+                <h3 class="cert-card__name">環遊世界 x 文化探索 ─ 入圍</h3>
+              </div>
+            </article>
+
+            <!-- 獎項 2：嗅覺日記 -->
+            <article class="cert-card">
+              <div class="cert-card__media" title="點擊放大檢視獎狀">
+                <img class="cert-card__img" src="images/award-aroma.jpg" alt="2026 彰化青年提案挑戰賽 ─ 遊戲人氣獎"> 
+              </div>
+              <div class="cert-card__body">
+                <span class="cert-card__tag">2026 彰化青年提案挑戰賽</span>
+                <h3 class="cert-card__name">嗅覺日記 ─ 遊戲人氣獎</h3>
+              </div>
+            </article>
+
+            <!-- 獎項 3：健康GO了沒 -->
+            <article class="cert-card">
+              <div class="cert-card__media" title="點擊放大檢視獎狀">
+                <img class="cert-card__img" src="images/award-healthgo.jpg" alt="2026 全國護理健康程式素養APP創意競賽 ─ 佳作"> 
+              </div>
+              <div class="cert-card__body">
+                <span class="cert-card__tag">2026 全國護理健康程式素養APP創意競賽</span>
+                <h3 class="cert-card__name">健康GO了沒 ─ 佳作</h3>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 點擊放大檢視燈箱 (Lightbox Modal) -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog">
+    <div class="lightbox-modal__content">
+      <button id="lightbox-close" class="lightbox-modal__close" type="button" aria-label="關閉視窗">&times;</button>
+      <img id="lightbox-img" class="lightbox-modal__img" src="" alt="">
+      <p id="lightbox-caption" class="lightbox-modal__caption"></p>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <footer id="footer">
+    <div class="wrap" style="text-align: center;">
+      <p>© 2026 江佳琦 · 國立臺北護理健康大學 醫護教育暨數位學習系</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
