@@ -68,4 +68,32 @@ document.addEventListener('DOMContentLoaded', () => {
       fbForm.reset();
     });
   }
+
+  // 嗅覺日記：LINE 官方帳號 QR Code 彈跳視窗控制
+  const modal = document.getElementById('line-qr-modal');
+  const openBtn = document.getElementById('open-line-modal-btn');
+  const closeBtn = document.getElementById('close-line-modal-btn');
+
+  if (openBtn && modal) {
+    openBtn.addEventListener('click', () => {
+      modal.classList.add('is-active');
+      modal.setAttribute('aria-hidden', 'false');
+    });
+  }
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('is-active');
+      modal.setAttribute('aria-hidden', 'true');
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('is-active');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
 });

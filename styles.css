@@ -1219,3 +1219,88 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   LINE 好友 QR Code 彈跳視窗樣式 (QR Modal)
+   ========================================================================== */
+.qr-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.qr-modal.is-active {
+  display: flex;
+}
+.qr-modal__card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: modalFadeIn 0.25s ease;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+.qr-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: transparent;
+  border: 0;
+  font-size: 24px;
+  color: #64748b;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.qr-modal__close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.qr-modal__title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-1);
+  margin-bottom: 8px;
+}
+.qr-modal__link {
+  display: inline-block;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 2px dashed #cbd5e1;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.qr-modal__link:hover {
+  transform: scale(1.02);
+  border-color: #06c755;
+}
+.qr-modal__img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+.qr-modal__hint {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #06c755;
+}
