@@ -32,30 +32,40 @@
         <!-- 填寫表單 -->
         <div class="feedback-form-box">
           <h2 class="m-text-6" style="color: var(--color-1);">留下您的心得或建議</h2>
-          <form id="feedback-form" aria-label="回饋表單">
+          <form id="feedback-form" action="https://formspree.io/f/xrpbrgow" method="POST">
+            <!-- 稱呼 -->
             <div class="form-group">
               <label for="fb-name">您的稱呼 <span style="color: #ef4444;">*</span></label>
-              <input id="fb-name" class="m-field" type="text" placeholder="例如：王同學 / 訪客老師" required>
+              <input id="fb-name" name="name" class="m-field" type="text" placeholder="例如：王同學 / 訪客老師" required>
             </div>
+
+            <!-- Email -->
             <div class="form-group" style="margin-top: 16px;">
               <label for="fb-email">聯絡 Email <span style="color: #ef4444;">*</span></label>
-              <input id="fb-email" class="m-field" type="email" placeholder="example@domain.com" required>
+              <input id="fb-email" name="email" class="m-field" type="email" placeholder="example@domain.com" required>
             </div>
+
+            <!-- 主要關注的作品或主題（完整保留） -->
             <div class="form-group" style="margin-top: 16px;">
               <label for="fb-project">主要關注的作品或主題</label>
-              <select id="fb-project" class="m-field">
+              <select id="fb-project" name="project" class="m-field">
                 <option value="欸今天午餐吃什麼？">欸今天午餐吃什麼？（選餐輪盤 / BMR）</option>
                 <option value="健康電子雞">健康電子雞（像素養成遊戲）</option>
                 <option value="環遊世界 x 文化探索">環遊世界 x 文化探索（ThingLink VR 360）</option>
+                <option value="嗅覺日記">嗅覺日記（LINE 官方帳號 / 智慧香氛）</option>
+                <option value="健康GO了沒">健康GO了沒（App Inventor / 地圖搜尋）</option>
                 <option value="我是洗手小英雄">我是洗手小英雄（幼兒衛教互動教材）</option>
                 <option value="網站介面與整體建議">網站介面與整體風格建議</option>
                 <option value="其他合作交流">其他合作交流</option>
               </select>
             </div>
+
+            <!-- 回饋內容 -->
             <div class="form-group" style="margin-top: 16px;">
               <label for="fb-msg">您的回饋內容 <span style="color: #ef4444;">*</span></label>
-              <textarea id="fb-msg" class="m-field" rows="5" placeholder="請分享您的想法、使用體驗或改進建議..." required></textarea>
+              <textarea id="fb-msg" name="message" class="m-field" rows="5" placeholder="請分享您的想法、使用體驗或改進建議..." required></textarea>
             </div>
+
             <div style="margin-top: 24px;">
               <button class="m-btn" type="submit"><span class="m-btn__label">確認送出回饋</span></button>
             </div>

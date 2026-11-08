@@ -57,18 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 回饋表單提交事件
-  const fbForm = document.getElementById('feedback-form');
-  if (fbForm) {
-    fbForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('fb-name')?.value.trim() || '訪客';
-      const project = document.getElementById('fb-project')?.value || '本網站';
-      alert(`感謝 ${name} 的寶貴意見！您針對【${project}】的回饋心得已成功送出。`);
-      fbForm.reset();
-    });
-  }
-
   // 嗅覺日記：LINE 官方帳號 QR Code 彈跳視窗控制
   const modal = document.getElementById('line-qr-modal');
   const openBtn = document.getElementById('open-line-modal-btn');
