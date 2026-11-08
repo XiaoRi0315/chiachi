@@ -96,4 +96,36 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+
+  // 程式方塊輪播控制邏輯 (Block Carousel)
+  document.querySelectorAll('.block-carousel').forEach((carousel) => {
+    const slides = carousel.querySelectorAll('.block-carousel__slide');
+    const dots = carousel.querySelectorAll('.block-carousel__dot');
+    const prevBtn = carousel.querySelector('.block-carousel__btn--prev');
+    const nextBtn = carousel.querySelector('.block-carousel__btn--next');
+    let currentIndex = 0;
+
+    const showSlide = (index) => {
+      if (slides.length === 0) return;
+      currentIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('is-active', idx === currentIndex);
+      });
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('is-active', idx === currentIndex);
+      });
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+    }
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => showSlide(idx));
+    });
+  });
+
 });

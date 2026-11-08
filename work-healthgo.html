@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>健康GO了沒 ─ 作品詳情 ─ 佳琦的個人網站</title>
+  <meta name="description" content="健康GO了沒作品詳情：以 App Inventor 開發之健康管理 App，重點展示周邊運動中心即時 GPS 定位、動態半徑距離計算與互動地圖標記模組。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Rethink+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="m-text">
+
+  <main id="main">
+    <!-- 簡約樣式橫幅 -->
+    <section class="page-banner">
+      <div class="wrap page-banner__wrap">
+        <div class="page-banner__breadcrumb">
+          <span>首頁</span> <span>/</span> <span>作品集</span> <span>/</span> <span>健康GO了沒</span>
+        </div>
+        <h1 class="page-banner__title m-text-2">健康GO了沒</h1>
+        <p class="page-banner__desc m-text-5" style="white-space: nowrap; max-width: none;">健康管理 App 之運動地圖模組，重點呈現周邊運動中心的 GPS 定位搜尋與互動地圖標記功能。</p>
+      </div>
+    </section>
+
+    <!-- 作品主體內容區 -->
+    <section class="project-detail-section">
+      <div class="wrap">
+
+        <!-- 區塊一：作品簡介 -->
+        <article class="detail-card">
+          <h2 class="section-title">
+            <span>📖</span> 作品簡介
+          </h2>
+          <p style="font-size: 16px; line-height: 1.8; color: #334155;">
+            本作品為小組共同規劃之健康管理行動應用程式，在此頁面<strong>重點呈現由我負責開發的核心功能模組──「附近運動場地搜尋與定位地圖」</strong>。為了解決使用者日常尋找合適運動空間的不便，本模組旨在提供直覺、即時且可客製化搜尋範圍的運動場地導覽服務。
+          </p>
+          <p style="font-size: 16px; line-height: 1.8; color: #334155; margin-top: 12px;">
+            透過 App Inventor 整合手機內建 GPS「位置感測器」與 OpenStreetMap 開源地圖視覺化元件，使用者可自由滑動設定搜尋半徑（公里），系統將依據經緯度差與球面三角幾何公式即時計算距離，並於地圖上動態標註圖釘與列出符合範圍的運動中心，打造兼具實用性與直覺操作的數位健康體驗。
+          </p>
+        </article>
+
+        <!-- 區塊二：組別分工說明 -->
+        <article class="detail-card">
+        <span class="team-badge">團隊協作專案</span>
+        <h2 class="section-title">
+            <span>👥</span> 團隊分工與負責項目
+        </h2>
+        <div class="role-box">
+            本作品為小組協作專案中的獨立功能之一。
+        </div>
+        </article>
+
+        <!-- 區塊三：實機執行成效展示（取代展示影片） -->
+        <article class="detail-card">
+          <h2 class="section-title">
+            <span>📱</span> 實機執行效果與操作流程
+          </h2>
+          <p style="font-size: 15px; color: #5c6894; margin-bottom: 24px;">
+            本模組於實體行動裝置上成功運作，使用者透過滑桿設定範圍後點擊搜尋，即可於地圖與下方結果列表中清晰查看周邊場地與實際距離：
+          </p>
+          
+          <div class="features-grid">
+            <!-- 實機截圖 1 -->
+            <div class="feature-card">
+              <div class="feature-card__media">
+                <!-- 【放圖片位置】：手機介面配置與初始定位狀態截圖 -->
+                <img class="feature-card__img" src="images/healthgo-ui-layout.png" alt="附近運動場搜尋介面配置與 GPS 初始讀取狀態">
+              </div>
+              <div class="feature-card__body">
+                <h3 class="feature-card__title">🧭 介面配置與 GPS 即時定位</h3>
+                <p class="feature-card__desc">
+                  頂部即時回報手機 GPS 讀取狀態與目前經緯度座標；配置半徑拖曳滑桿與搜尋按鈕，下方無縫整合可自由縮放拖曳的互動地圖檢視區。
+                </p>
+              </div>
+            </div>
+
+            <!-- 實機截圖 2 -->
+            <div class="feature-card">
+              <div class="feature-card__media">
+                <!-- 【放圖片位置】：實機搜尋成功與地圖標記結果截圖 -->
+                <img class="feature-card__img" src="images/healthgo-app-result.jpg" alt="動態範圍搜尋與運動中心地圖標記成效">
+              </div>
+              <div class="feature-card__body">
+                <h3 class="feature-card__title">📍 範圍篩選與地圖紅圖釘標註</h3>
+                <p class="feature-card__desc">
+                  設定 3.0 公里範圍後一鍵搜尋，系統自動於地圖標繪出符合條件的「北投運動中心 (0.5 km)」與「士林運動中心 (1.8 km)」，並同步產出文字列表。
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 區塊四：核心程式方塊與演算法解析 -->
+        <article class="detail-card">
+          <h2 class="section-title">
+            <span>🧩</span> App Inventor 核心程式方塊解析
+          </h2>
+          <p style="font-size: 15px; color: #5c6894; margin-bottom: 24px;">
+            本模組採用結構化積木拼塊設計，將複雜的空間座標換算、動態列表過濾與邊界防呆機制模組化，核心技術方塊如下：
+          </p>
+
+          <div class="features-grid">
+            <!-- 1. 第一區：初始化全域變數與建立資料庫（3 張圖輪播） -->
+            <div class="feature-card">
+              <div class="block-carousel" data-carousel="carousel-1">
+                <div class="block-carousel__track">
+                  <div class="block-carousel__slide is-active">
+                    <img class="block-carousel__img" src="images/healthgo-block-vars.png" alt="初始化全域變數：我的緯度、我的經度與預設搜尋半徑 3 公里">
+                  </div>
+                  <div class="block-carousel__slide">
+                    <img class="block-carousel__img" src="images/healthgo-block-list1.png" alt="建立清單：大同、大安、南港、信義運動中心經緯度資料庫">
+                  </div>
+                  <div class="block-carousel__slide">
+                    <img class="block-carousel__img" src="images/healthgo-block-list2.png" alt="清單中的清單：名稱與經緯度索引值對應結構">
+                  </div>
+                </div>
+                <button class="block-carousel__btn block-carousel__btn--prev" type="button" aria-label="上一張">&#10094;</button>
+                <button class="block-carousel__btn block-carousel__btn--next" type="button" aria-label="下一張">&#10095;</button>
+                <div class="block-carousel__dots">
+                  <button class="block-carousel__dot is-active" type="button" aria-label="第 1 張"></button>
+                  <button class="block-carousel__dot" type="button" aria-label="第 2 張"></button>
+                  <button class="block-carousel__dot" type="button" aria-label="第 3 張"></button>
+                </div>
+              </div>
+              <div class="feature-card__body">
+                <h3 class="feature-card__title">📦 1. 初始化全域變數與建立場地資料庫</h3>
+                <p class="feature-card__desc">
+                  配置「我的緯度 (預設0)」、「我的經度 (預設0)」與「搜尋半徑 (預設3公里)」三個核心變數；並透過二維清單結構（清單中的清單）建立運動場資料庫，索引值 1、2、3 分別規範場地名稱、緯度與經度數值。
+                </p>
+              </div>
+            </div>
+
+            <!-- 2. 第二區與第三區合併：GPS 定位與滑桿設定（2 張圖輪播） -->
+            <div class="feature-card">
+              <div class="block-carousel" data-carousel="carousel-2">
+                <div class="block-carousel__track">
+                  <div class="block-carousel__slide is-active">
+                    <img class="block-carousel__img" src="images/healthgo-block-location.png" alt="位置感測器位置改變事件與座標標籤更新">
+                  </div>
+                  <div class="block-carousel__slide">
+                    <img class="block-carousel__img" src="images/healthgo-block-slider.png" alt="滑桿位置被改變事件與公里數數值格式化顯示">
+                  </div>
+                </div>
+                <button class="block-carousel__btn block-carousel__btn--prev" type="button" aria-label="上一張">&#10094;</button>
+                <button class="block-carousel__btn block-carousel__btn--next" type="button" aria-label="下一張">&#10095;</button>
+                <div class="block-carousel__dots">
+                  <button class="block-carousel__dot is-active" type="button" aria-label="第 1 張"></button>
+                  <button class="block-carousel__dot" type="button" aria-label="第 2 張"></button>
+                </div>
+              </div>
+              <div class="feature-card__body">
+                <h3 class="feature-card__title">📡 2. GPS 即時定位與動態半徑滑桿連動</h3>
+                <p class="feature-card__desc">
+                  位置感測器抓取座標後即時存入全域變數，並更新畫面定位狀態與經緯度字串；使用者拖曳滑桿時，動態同步「搜尋半徑」變數，並使用數學格式化將公里數取至小數點後 1 位即時呈現於介面。
+                </p>
+              </div>
+            </div>
+
+            <!-- 3. [程序] 定義程序 [計算距離_公里] 取得回傳值 (放在第四區之前) -->
+            <div class="feature-card">
+              <div class="feature-card__media">
+                <img class="feature-card__img" src="images/healthgo-block-distance.png" alt="定義程序：計算距離_公里之球面經緯度幾何換算公式">
+              </div>
+              <div class="feature-card__body">
+                <h3 class="feature-card__title">📐 3. 自訂程序：計算距離_公里</h3>
+                <p class="feature-card__desc">
+                  輸入 lat1、lon1、lat2、lon2 取得回傳值。外層計算「緯度差」、「經度差」與「平均緯度」；內層計算 X 軸（經度差 &times; cos(平均緯度)）與 Y 軸（緯度差），最後透過 &radic;(X&sup2; + Y&sup2;) &times; 111.32 球面三角幾何公式精確回傳兩點間公里數。
+                </p>
+              </div>
+            </div>
+
+            <!-- 4. 第四區：核心！開始搜尋與篩選邏輯（2 張圖輪播） -->
+            <div class="feature-card">
+              <div class="block-carousel" data-carousel="carousel-4">
+                <div class="block-carousel__track">
+                  <div class="block-carousel__slide is-active">
+                    <img class="block-carousel__img" src="images/healthgo-block-search-loop.png" alt="按鈕開始搜尋事件、防呆判斷與迴圈比對場地距離">
+                  </div>
+                  <div class="block-carousel__slide">
+                    <img class="block-carousel__img" src="images/healthgo-block-search-result.png" alt="搜尋結果列表顯示與查無場地之提醒機制">
+                  </div>
+                </div>
+                <button class="block-carousel__btn block-carousel__btn--prev" type="button" aria-label="上一張">&#10094;</button>
+                <button class="block-carousel__btn block-carousel__btn--next" type="button" aria-label="下一張">&#10095;</button>
+                <div class="block-carousel__dots">
+                  <button class="block-carousel__dot is-active" type="button" aria-label="第 1 張"></button>
+                  <button class="block-carousel__dot" type="button" aria-label="第 2 張"></button>
+                </div>
+              </div>
+              <div class="feature-card__body">
+                <h3 class="feature-card__title">🔍 4. 開始搜尋、清單過濾與地圖標記邏輯</h3>
+                <p class="feature-card__desc">
+                  點擊搜尋時若緯度為 0 則跳出通知器防呆「請等待GPS定位完成再搜尋喔！」；定位成功後遍歷場地清單並計算距離，當距離 &le; 搜尋半徑時即加入結果清單並在地圖上繪製標記；若無符合項目則貼心提示擴大範圍。
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 頁尾 -->
+  <footer id="footer">
+    <div class="wrap" style="text-align: center;">
+      <p>© 2026 江佳琦 · 國立臺北護理健康大學 醫護教育暨數位學習系</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
