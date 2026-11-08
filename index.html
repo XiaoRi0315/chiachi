@@ -35,35 +35,47 @@
         <!-- 合併：關於我 核心卡片 -->
         <div class="hero__intro-box">
           <article class="about-card">
-            <div class="about-card__content">
+            <!-- 左側：標題（置上）與自我介紹 -->
+            <div class="about-card__content" style="justify-content: flex-start;">
               <div>
-                <span class="tag">About Me</span>
-                <h2 class="m-text-2" style="color: var(--color-2); margin-top: 4px;">˚₊‧꒰ა 關於我 ໒꒱ ‧₊˚</h2>
+                <span class="tag" style="font-size: 18px; padding: 8px 22px; font-weight: 800; letter-spacing: 0.05em; display: inline-block;">About Me</span>
               </div>
-              <p class="about-card__quote">
+              <p class="about-card__quote" style="margin-top: 8px;">
                 大家好，我是江佳琦！來自<strong>國立臺北護理健康大學 醫護教育暨數位學習系</strong>。<br>
                 因為喜歡多媒體並且想學習教材製作而來到這裡。自己經常覺得學習是件很無聊的事情，但又覺得不能什麼都不學，所以就想：「如果可以邊學邊玩一定會是件很有趣的事！」<br><br>
                 因此在製作教材上總是會先思考怎麼往<strong>遊戲化學習</strong>的方向發展，希望透過遊戲輔助學習，讓更多像我一樣對學習感到無趣的人可以體驗到學習的樂趣，進而增加學習效率！
               </p>
-              <ul class="about-card__meta">
-                <li><strong>📍 核心專長：</strong> 遊戲化數位教材設計、互動多媒體網頁開發</li>
-                <li><strong>🎓 所屬學系：</strong> 國立臺北護理健康大學 醫護教育暨數位學習系</li>
-                <li><strong>💡 設計哲學：</strong> 以學習者為中心，降低認知負荷，提升沉浸動機</li>
-              </ul>
-              <div class="about-card__actions">
-                <a class="m-btn" href="works.html"><span class="m-btn__label">瀏覽作品集 ↗</span></a>
-                <a class="m-btn" style="background: var(--color-1);" href="skills.html"><span class="m-btn__label">專業證照 ↗</span></a>
-              </div>
             </div>
-            <div class="about-card__side">
-              <figure class="about-card__photo m-photo">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="數位學習科技與互動介面" loading="lazy">
-              </figure>
-              <div style="background: #f7f9ff; padding: 20px; border-radius: 16px; border: 1px dashed var(--color-sub);">
-                <h3 class="m-text-6" style="color: var(--color-1); font-size: 16px; margin-bottom: 6px;">🎯 學習與開發願景</h3>
-                <p style="font-size: 14px; color: #5c6894; line-height: 1.6;">
-                  融合資訊科技與衛教專業，將生硬流程轉化為易懂好玩的闖關式互動，讓知識自然生根。
-                </p>
+
+            <!-- 右側：專業背景、技術範疇、設計哲學與未來願景 -->
+            <div class="about-card__side" style="justify-content: flex-start;">
+              <div style="background: #f7f9ff; padding: clamp(20px, 2.5vw, 28px); border-radius: 20px; border: 1px solid rgba(117, 142, 205, 0.25); display: flex; flex-direction: column; gap: 16px;">
+                <div>
+                  <h3 style="font-size: 16px; font-weight: 700; color: var(--color-2); margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                    <span>📍</span> 核心專長
+                  </h3>
+                  <p style="font-size: 14px; color: #475569; line-height: 1.6;">
+                    前端網頁開發（HTML / CSS / JavaScript）、ThingLink 360 環景互動教材、App Inventor 行動程式、LINE 官方帳號對話機器人建置。
+                  </p>
+                </div>
+
+                <div style="border-top: 1px dashed rgba(117, 142, 205, 0.3); padding-top: 14px;">
+                  <h3 style="font-size: 16px; font-weight: 700; color: var(--color-2); margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                    <span>💡</span> 設計哲學
+                  </h3>
+                  <p style="font-size: 14px; color: #475569; line-height: 1.6;">
+                    將複雜嚴肅的資訊化繁為簡，融入關卡挑戰、即時回饋與視覺故事化，使學習轉化為主動探索的愉悅旅程。
+                  </p>
+                </div>
+
+                <div style="border-top: 1px dashed rgba(117, 142, 205, 0.3); padding-top: 14px;">
+                  <h3 style="font-size: 16px; font-weight: 700; color: var(--color-2); margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                    <span>🎯</span> 學習與開發願景
+                  </h3>
+                  <p style="font-size: 14px; color: #475569; line-height: 1.6;">
+                    持續探索 AI 應用與沉浸式教育科技，開發兼具人性溫度與科學素養的數位教材，實踐寓教於樂的理念。
+                  </p>
+                </div>
               </div>
             </div>
           </article>
@@ -77,66 +89,48 @@
         <div class="home-sections__head">
           <div>
             <h2 class="m-text-2" style="color: var(--color-1);">精選專案預覽</h2>
-            <p class="m-text-5" style="color: #64748b; margin-top: 4px;">近期開發的遊戲化學習與衛教互動教材</p>
           </div>
-          <a class="m-link" href="works.html" style="color: var(--color-2); font-weight: 700;">查看全部作品 →</a>
+          <a class="m-link" href="https://sites.google.com/view/141d12007/%E4%BD%9C%E5%93%81%E9%9B%86" target="_blank" rel="noopener noreferrer" style="color: var(--color-2); font-weight: 700;">查看全部作品 →</a>
         </div>
         <div class="works-grid">
+          <!-- 1. 環遊世界 x 文化探索 -->
           <article class="work-card">
-            <div class="work-card__photo m-photo">
-              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="欸今天午餐吃什麼？" loading="lazy">
+            <div class="work-card__photo">
+              <img class="work-card__img" src="images/work-vr.jfif" alt="環遊世界 x 文化探索">
             </div>
-            <span class="tag">互動選餐 / 健康衛教</span>
-            <h3 class="m-text-6">欸今天午餐吃什麼？</h3>
-            <p class="work-card__desc">隨機輪盤與石牌在地美食探索，結合 BMR 基礎代謝計算，輔助健康均衡飲食。</p>
+            <h2 class="m-text-6">環遊世界 x 文化探索</h2>
+            <p class="work-card__desc">
+              運用 ThingLink 打造的 360 度 VR 環景地圖，帶領學習者走訪各國文化地標並進行趣味問答闖關。
+            </p>
             <div class="work-card__footer">
-              <a class="m-link" href="works.html" style="color: var(--color-1);">瞭解更多 ↗</a>
+              <span class="tag">VR 探索 / 地理文化</span>
+              <a class="m-link" href="https://sites.google.com/view/141d12007/%E4%BD%9C%E5%93%81%E9%9B%86/%E7%92%B0%E9%81%8A%E4%B8%96%E7%95%8C-x-%E6%96%87%E5%8C%96%E6%8E%A2%E7%B4%A2" target="_blank" rel="noopener noreferrer">查看詳情 ↗</a>
             </div>
           </article>
 
+          <!-- 2. 嗅覺日記 -->
           <article class="work-card">
-            <div class="work-card__photo m-photo">
-              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="健康電子雞" loading="lazy">
+            <div class="work-card__photo">
+              <img class="work-card__img" src="images/work-aromadiary.jfif" alt="嗅覺日記">
             </div>
-            <span class="tag">像素遊戲 / 習慣養成</span>
-            <h3 class="m-text-6">健康電子雞</h3>
-            <p class="work-card__desc">像素養成風格的健康打卡遊戲，透過照護虛擬寵物引導養成規律作息與喝水習慣。</p>
+            <h2 class="m-text-6">嗅覺日記</h2>
+            <p class="work-card__desc">
+              AI 智慧香氛機的官方 LINE 帳號，整合互動小遊戲、產品介紹與個人化情緒香氛推薦服務。
+            </p>
             <div class="work-card__footer">
-              <a class="m-link" href="works.html" style="color: var(--color-1);">瞭解更多 ↗</a>
-            </div>
-          </article>
-
-          <article class="work-card">
-            <div class="work-card__photo m-photo">
-              <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="環遊世界 x 文化探索" loading="lazy">
-            </div>
-            <span class="tag">VR 探索 / 地理文化</span>
-            <h3 class="m-text-6">環遊世界 x 文化探索</h3>
-            <p class="work-card__desc">ThingLink 360 度互動環景地圖，帶領學習者沉浸走訪全球文化地標與知識闖關。</p>
-            <div class="work-card__footer">
-              <a class="m-link" href="works.html" style="color: var(--color-1);">瞭解更多 ↗</a>
-            </div>
-          </article>
-
-          <article class="work-card">
-            <div class="work-card__photo m-photo">
-              <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="我是洗手小英雄" loading="lazy">
-            </div>
-            <span class="tag">幼兒衛教 / 互動闖關</span>
-            <h3 class="m-text-6">我是洗手小英雄</h3>
-            <p class="work-card__desc">針對學童設計的趣味洗手步驟動畫互動教材，將洗手七字訣融入生動遊戲關卡。</p>
-            <div class="work-card__footer">
-              <a class="m-link" href="works.html" style="color: var(--color-1);">瞭解更多 ↗</a>
+              <span class="tag">LINE 官方帳號 / 智慧香氛</span>
+              <a class="m-link" href="https://sites.google.com/view/141d12007/%E4%BD%9C%E5%93%81%E9%9B%86/%E5%97%85%E8%A6%BA%E6%97%A5%E8%A8%98" target="_blank" rel="noopener noreferrer">查看詳情 ↗</a>
             </div>
           </article>
         </div>
       </div>
     </section>
   </main>
+  
   <footer id="footer">
-  <div class="wrap" style="text-align: center;">
-    <p>© 2026 江佳琦 · 國立臺北護理健康大學 醫護教育暨數位學習系</p>
-  </div>
+    <div class="wrap" style="text-align: center;">
+      <p>© 2026 江佳琦 · 國立臺北護理健康大學 醫護教育暨數位學習系</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
