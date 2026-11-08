@@ -519,12 +519,12 @@
     position: relative;
     padding-top: clamp(20px, 3vw, 36px);
     padding-bottom: 32px;
-    background: var(--color-1); /* 改為與首頁相同的純色 #7189ff */
+    background: var(--color-1);
     color: #fff;
     overflow: hidden;
   }
   .page-banner::before {
-    display: none; /* 關閉光暈疊加，確保色彩 100% 一致 */
+    display: none;
   }
   .page-banner__wrap {
     position: relative;
@@ -610,7 +610,7 @@
   .home-hero-about .about-card__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 18px;
   }
   .home-hero-about .about-card__quote {
@@ -670,7 +670,6 @@
     margin-bottom: 36px;
   }
 
-  
   /* 作品列表樣式 (Works / Portfolio Page) */
   .works-section {
     padding-block: var(--space-2);
@@ -894,146 +893,142 @@
   to { transform: translateY(15px); }
 }
 
-  /* 專業證照分類與卡片樣式 */
-  .cert-category {
-    margin-bottom: 56px;
-  }
-  .cert-category__header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid rgba(113, 137, 255, 0.2);
-  }
-  .cert-category__badge {
-    padding: 6px 14px;
-    border-radius: var(--radius-1);
-    background: var(--color-2);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-  }
-  .cert-category__title {
-    color: var(--color-1);
-    font-size: clamp(22px, 3vw, 28px);
-    font-weight: 800;
-  }
+/* 專業證照分類與卡片樣式 */
+.cert-category {
+  margin-bottom: 56px;
+}
+.cert-category__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(113, 137, 255, 0.2);
+}
+.cert-category__badge {
+  padding: 6px 14px;
+  border-radius: var(--radius-1);
+  background: var(--color-2);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.cert-category__title {
+  color: var(--color-1);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+}
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.cert-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(117, 142, 205, 0.2);
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(21, 26, 58, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(113, 137, 255, 0.16);
+}
+.cert-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #f8fafc;
+  border-bottom: 1px solid rgba(117, 142, 205, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px;
+}
+.cert-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.cert-card__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-sub);
+  padding: 20px;
+  text-align: center;
+}
+.cert-card__placeholder svg {
+  width: 44px;
+  height: 44px;
+  stroke: currentColor;
+  opacity: 0.7;
+}
+.cert-card__placeholder span {
+  font-size: 13px;
+  font-weight: 600;
+}
+.cert-card__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+.cert-card__tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-sub);
+  letter-spacing: 0.05em;
+}
+.cert-card__name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-4);
+  line-height: 1.4;
+}
+@media (max-width: 991px) {
   .cert-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .cert-card {
-    background: #fff;
-    border-radius: 20px;
-    border: 1px solid rgba(117, 142, 205, 0.2);
-    overflow: hidden;
-    box-shadow: 0 4px 18px rgba(21, 26, 58, 0.05);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+@media (max-width: 640px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
   }
-  .cert-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(113, 137, 255, 0.16);
-  }
-  .cert-card__media {
-    position: relative;
-    aspect-ratio: 4 / 3;
-    background: #f8fafc; /* 淺底色襯托橫向或直向的證照 */
-    border-bottom: 1px solid rgba(117, 142, 205, 0.15);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 12px; /* 增加內距，避免證照邊緣貼齊卡片外框 */
-  }
-  .cert-card__img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* 關鍵：改為 contain，等比例完整縮放顯示，不裁切任何邊角與文字 */
-    display: block;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* 為證照加上微陰影增加層次 */
-  }
-  .cert-card__placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: var(--color-sub);
-    padding: 20px;
-    text-align: center;
-  }
-  .cert-card__placeholder svg {
-    width: 44px;
-    height: 44px;
-    stroke: currentColor;
-    opacity: 0.7;
-  }
-  .cert-card__placeholder span {
-    font-size: 13px;
-    font-weight: 600;
-  }
-  .cert-card__body {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex-grow: 1;
-  }
-  .cert-card__tag {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--color-sub);
-    letter-spacing: 0.05em;
-  }
-  .cert-card__name {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--color-4);
-    line-height: 1.4;
-  }
-  @media (max-width: 991px) {
-    .cert-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  @media (max-width: 640px) {
-    .cert-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}
 
-  .work-card__footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-    padding-top: 12px;
-    border-top: 1px solid #f1f4fc;
-  }
-  .work-card__footer .tag {
-    margin-bottom: 0;
-  }
-  .work-card__footer .m-link {
-    color: var(--color-1);
-    font-weight: 700;
-  }
+.work-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #f1f4fc;
+}
+.work-card__footer .tag {
+  margin-bottom: 0;
+}
+.work-card__footer .m-link {
+  color: var(--color-1);
+  font-weight: 700;
+}
 
-  /* ==========================================================================
+/* ==========================================================================
    作品詳情頁面專屬樣式 (Project Detail Section)
    ========================================================================== */
-
-/* 詳情頁容器區塊 */
 .project-detail-section {
   padding-block: clamp(40px, 6vw, 80px);
 }
-
-/* 詳情白色卡片容器 */
 .detail-card {
   background: #fff;
   border: 1px solid rgba(117, 142, 205, 0.2);
@@ -1042,8 +1037,6 @@
   box-shadow: 0 8px 30px rgba(21, 26, 58, 0.05);
   margin-bottom: 40px;
 }
-
-/* 區塊標題 */
 .section-title {
   font-size: clamp(22px, 2.5vw, 28px);
   font-weight: 800;
@@ -1053,8 +1046,6 @@
   align-items: center;
   gap: 10px;
 }
-
-/* 團隊專案標籤 */
 .team-badge {
   display: inline-block;
   padding: 6px 16px;
@@ -1065,8 +1056,6 @@
   font-weight: 700;
   margin-bottom: 12px;
 }
-
-/* 分工職責提示框 */
 .role-box {
   background: #f7f9ff;
   border-left: 4px solid var(--color-1);
@@ -1076,17 +1065,14 @@
   line-height: 1.7;
   color: var(--color-4);
 }
-
 .role-box__placeholder {
   color: #64748b;
   font-style: italic;
 }
-
-/* 作品影片 16:9 播放容器 */
 .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 比例 */
+  padding-bottom: 56.25%;
   height: 0;
   border-radius: 18px;
   overflow: hidden;
@@ -1094,7 +1080,6 @@
   background: #000;
   margin-top: 16px;
 }
-
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -1103,16 +1088,12 @@
   height: 100%;
   border: 0;
 }
-
-/* 功能特色網格 */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
   margin-top: 24px;
 }
-
-/* 功能特色單一卡片 */
 .feature-card {
   background: #fdfdff;
   border: 1px solid rgba(117, 142, 205, 0.25);
@@ -1123,13 +1104,10 @@
   box-shadow: 0 4px 16px rgba(21, 26, 58, 0.04);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 .feature-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px rgba(113, 137, 255, 0.15);
 }
-
-/* 圖片容器：留有內距，使圖片邊緣不貼緊卡片 */
 .feature-card__media {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -1141,8 +1119,6 @@
   overflow: hidden;
   padding: 10px;
 }
-
-/* 截圖：contain 完整顯示不裁切 */
 .feature-card__img {
   width: 100%;
   height: 100%;
@@ -1150,8 +1126,6 @@
   border-radius: 6px;
   display: block;
 }
-
-/* 圖片預留佔位區塊 */
 .feature-card__placeholder {
   display: flex;
   flex-direction: column;
@@ -1162,20 +1136,16 @@
   padding: 20px;
   text-align: center;
 }
-
 .feature-card__placeholder svg {
   width: 44px;
   height: 44px;
   stroke: currentColor;
   opacity: 0.7;
 }
-
 .feature-card__placeholder span {
   font-size: 13px;
   font-weight: 600;
 }
-
-/* 卡片文字內容 */
 .feature-card__body {
   padding: 24px;
   display: flex;
@@ -1183,7 +1153,6 @@
   gap: 10px;
   flex-grow: 1;
 }
-
 .feature-card__title {
   font-size: 19px;
   font-weight: 700;
@@ -1192,14 +1161,11 @@
   align-items: center;
   gap: 8px;
 }
-
 .feature-card__desc {
   font-size: 15px;
   color: #5c6894;
   line-height: 1.65;
 }
-
-/* 底部操作按鈕列 */
 .project-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1210,123 +1176,121 @@
   padding-top: 24px;
   border-top: 1px solid rgba(117, 142, 205, 0.2);
 }
-
 .project-actions--left {
   justify-content: flex-start !important;
   text-align: left !important;
 }
-
 .project-actions .project-back-link {
   font-weight: 700;
   color: var(--color-1);
 }
-
-/* 響應式佈局：平板與手機單欄呈現 */
 @media (max-width: 899px) {
   .features-grid {
     grid-template-columns: 1fr;
   }
 }
 
-  /* 程式方塊輪播元件 (Block Carousel for Different Image Aspect Ratios) */
-  .block-carousel {
-    position: relative;
-    width: 100%;
-    background: #f8fafc;
-    border-bottom: 1px solid rgba(117, 142, 205, 0.15);
-    border-radius: 16px 16px 0 0;
-    overflow: hidden;
-  }
-  .block-carousel__track {
-    position: relative;
-    width: 100%;
-    min-height: 260px;
-    height: clamp(240px, 32vw, 340px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .block-carousel__slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 48px; /* 留出左右按鈕空間 */
-  }
-  .block-carousel__slide.is-active {
-    opacity: 1;
-    visibility: visible;
-  }
-  .block-carousel__img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 14px rgba(21, 26, 58, 0.08);
-    display: block;
-  }
-  .block-carousel__btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(117, 142, 205, 0.25);
-    color: var(--color-1);
-    font-size: 16px;
-    font-weight: 800;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: background 0.2s, transform 0.2s;
-  }
-  .block-carousel__btn:hover {
-    background: #fff;
-    transform: translateY(-50%) scale(1.08);
-  }
-  .block-carousel__btn--prev { left: 10px; }
-  .block-carousel__btn--next { right: 10px; }
-  .block-carousel__dots {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 6px;
-    z-index: 2;
-  }
-  .block-carousel__dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(117, 142, 205, 0.35);
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .block-carousel__dot.is-active {
-    background: var(--color-1);
-    transform: scale(1.25);
-  }
+/* ==========================================================================
+   程式方塊輪播元件 (Block Carousel)
+   ========================================================================== */
+.block-carousel {
+  position: relative;
+  width: 100%;
+  background: #f8fafc;
+  border-bottom: 1px solid rgba(117, 142, 205, 0.15);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+.block-carousel__track {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  height: clamp(240px, 32vw, 340px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block-carousel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 48px;
+}
+.block-carousel__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.block-carousel__img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(21, 26, 58, 0.08);
+  display: block;
+}
+.block-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(117, 142, 205, 0.25);
+  color: var(--color-1);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, transform 0.2s;
+}
+.block-carousel__btn:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.08);
+}
+.block-carousel__btn--prev { left: 10px; }
+.block-carousel__btn--next { right: 10px; }
+.block-carousel__dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+.block-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(117, 142, 205, 0.35);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.block-carousel__dot.is-active {
+  background: var(--color-1);
+  transform: scale(1.25);
+}
 
-  /* 證照/獎狀卡片增加點擊放大提示游標 */
+/* ==========================================================================
+   圖片放大燈箱視窗 (Lightbox Modal for Certs & Awards)
+   ========================================================================== */
 .cert-card__media {
   cursor: zoom-in;
 }
-
-/* 圖片放大燈箱視窗 (Lightbox Modal) */
 .lightbox-modal {
   display: none;
   position: fixed;
@@ -1473,4 +1437,33 @@
   font-size: 13px;
   font-weight: 600;
   color: #06c755;
+}
+
+/* ==========================================================================
+   首頁橫幅：Live Orb 靈動球容器樣式
+   ========================================================================== */
+.hero__art--orb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.live-orb-container {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.live-orb-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+@media (max-width: 899px) {
+  .live-orb-container {
+    width: 190px;
+    height: 190px;
+  }
 }
